@@ -1,84 +1,48 @@
 ﻿@page "/"
 
 @using Syncfusion.Blazor.Maps
-
-@using Syncfusion.Blazor
 @using System.Collections.ObjectModel;
 
 
 <div>
 
-    <SfMaps @ref="sfMaps" Height="600px" Width="350px">
-
+    <SfMaps @ref="sfMaps">
         <MapsZoomSettings Enable="true" ZoomFactor="12"></MapsZoomSettings>
-
         <MapsCenterPosition Latitude="35.1154711" Longitude="-89.9568190"></MapsCenterPosition>
-
         <MapsLayers>
-
             <MapsLayer UrlTemplate="https://tile.openstreetmap.org/level/tileX/tileY.png" TValue="string">
-
-
                 <MapsMarkerSettings>
-
                     <MapsMarker Visible="true" Height="25" Width="25" DataSource="Cities" TValue="MapMarker">
-                       
                     </MapsMarker>
-                    
-
                 </MapsMarkerSettings>
-
-
             </MapsLayer>
-
         </MapsLayers>
-
     </SfMaps>
-
 </div>
 
 <br />
 
 <button @onclick="addMarkers">Add Marker</button>
 
-
-
 @code
 {
-
     SfMaps sfMaps;
-
     public class MapMarker
-
     {
-
         public double Latitude { get; set; }
-
         public double Longitude { get; set; }
-
         public string Name { get; set; }
-
     }
 
-
-
     private ObservableCollection<MapMarker> Cities = new ObservableCollection<MapMarker> {
-
         new MapMarker { Latitude = 35.11547118078336, Longitude = -89.9568190513077,  Name="Marker-One" },
-
         new MapMarker { Latitude = 35.13256277762481, Longitude = -89.94753689681518,  Name="Marker-Two" }
-
     };
   
-
     private void addMarkers()
-
     {
-
         Cities.Add(new MapMarker { Latitude = 35.132226015736194, Longitude = -89.9804791131883, Name = "Marker-Three" });
         Cities.Add(new MapMarker { Latitude = 35.12111209207373, Longitude = -89.91933012404557, Name = "Marker-Four" });
         Cities.Add(new MapMarker { Latitude = 35.15209258395299, Longitude = -89.94753689681518, Name = "Marker-Five" });
-
     }
-
 }
