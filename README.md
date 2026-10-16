@@ -44,9 +44,6 @@ dotnet run
 
 5. Launch the application using a supported .NET MAUI environment and view the page that hosts the Maps sample.
 
-## Project Structure
-
-`Pages/Index.razor` — contains the Syncfusion Maps implementation, marker data binding logic, and runtime marker addition workflow.
 
 ## Support and Feedback
 
